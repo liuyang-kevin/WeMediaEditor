@@ -13,10 +13,6 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""Simplified chat demo for websockets.
-
-Authentication, error handling, etc are left as an exercise for the reader :)
-"""
 
 import logging
 import tornado.escape
@@ -49,7 +45,7 @@ class Application(tornado.web.Application):
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render("wemedia.html", messages="ChatSocketHandler.cache")
+        self.render("wemedia.html", settings=self.application.settings)
 
 class RJSON(tornado.web.RequestHandler):
     def post(self):
