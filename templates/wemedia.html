@@ -168,7 +168,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="content">
+	<div class="content" id="art_body">
 		<div class="content-heading">
 			<div class="container">
 				<div class="row">
@@ -286,12 +286,7 @@
 	</footer>
 	<div class="fbtn-container">
 		<div class="fbtn-inner">
-			<a class="fbtn fbtn-brand-accent fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
-			<div class="fbtn-dropdown">
-				<a class="fbtn" href="https://github.com/Daemonite/material" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="fa fa-github"></span></a>
-				<a class="fbtn fbtn-blue" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="fa fa-twitter"></span></a>
-				<a class="fbtn fbtn-alt" href="http://www.daemon.com.au/" target="_blank"><span class="fbtn-text">Visit Daemon Website</span><span class="icon">link</span></a>
-			</div>
+			<a class="fbtn fbtn-brand-accent fbtn-lg" id="btn_save"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
 		</div>
 	</div>
 
@@ -301,7 +296,79 @@
 
 	<!-- js for this project -->
 	<script src="{{ static_url("js/project.min.js") }}"></script>
+	<script src="{{ static_url("create_article.js") }}"></script>
+	
 	<script type="text/javascript">
+	var jcontent = "this is test string";
+	function getCookie(name) {
+	    var c = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+	    return c ? c[1] : undefined;
+	}
+
+	// jQuery.postJSON = function(url, data, callback) {
+// 	    data._xsrf = getCookie("_xsrf");
+// 	    jQuery.ajax({
+// 	        url: url,
+// 	        data: jQuery.param(data),
+// 	        dataType: "json",
+// 	        type: "POST",
+// 	        success: callback
+// 	    });
+// 	}
+		$('#btn_save').on('click', function () {
+			var _xsrf = getCookie("_xsrf");
+			
+			$.ajax({
+				type: 'POST',
+				url: 'http://{{ request.host }}/wjson',
+				dataType: "json",
+				data: {"content": jcontent, "_xsrf": _xsrf},
+				success: function(data){
+					$('body').toast({ alive: 2000, content: data.msg });
+					// $("#dict_words").html("");
+// 					// alert(data.length);//输出root的子对象数量
+// 					$.each(data,function(idx,item){
+// 						var c = $(word_card);
+// 						c.attr("id", "word-"+idx);
+// 						c.find("#word_title").html(item.word);
+// 						c.find("#word_content").html(item.content);
+// 						c.find("#word_content").find("a").each(function(n,obj) {
+// 							$(obj).attr("href","#");
+// 							$(obj).click(function(){
+// 								searchWord($(this).text());
+// 							});
+// 						});
+// 						$("#dict_words").append(c);
+					// }); 
+				}
+			});
+		});
+		
+		//get article
+			$.ajax({
+				type: 'GET',
+				url: 'http://{{ request.host }}/rjson',
+				dataType: "json",
+				data: {},
+				success: function(data){
+					$("#art_body").text(data.msg);
+					// $("#dict_words").html("");
+// 					// alert(data.length);//输出root的子对象数量
+// 					$.each(data,function(idx,item){
+// 						var c = $(word_card);
+// 						c.attr("id", "word-"+idx);
+// 						c.find("#word_title").html(item.word);
+// 						c.find("#word_content").html(item.content);
+// 						c.find("#word_content").find("a").each(function(n,obj) {
+// 							$(obj).attr("href","#");
+// 							$(obj).click(function(){
+// 								searchWord($(this).text());
+// 							});
+// 						});
+// 						$("#dict_words").append(c);
+					// }); 
+				}
+			});
 		
 	</script>
 </body>
