@@ -5,14 +5,15 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Material</title>
+	<title>We Media</title>
 
-	<!-- css -->
+	<!-- css (come from Daemonite-material) -->
 	<link href="{{ static_url("css/base.min.css") }}" rel="stylesheet">
-
-	<!-- css for this project -->
+	<!-- css for this project (come from Daemonite-material) -->
 	<link href="{{ static_url("css/project.min.css") }}" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- css by my -->
+	<link href="{{ static_url("css/we_media_editor.css") }}" rel="stylesheet">
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -44,6 +45,30 @@
 			</div>
 		</div>
 	</div>
+<!-- operator bar-->
+	<nav class="header header-transparent affix operatorbar-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li class="dropdown">
+				<a class="dropdown-toggle waves-attach waves-effect" data-toggle="dropdown" aria-expanded="false"><span class="icon icon-lg">more_vert</span></a>
+				<ul class="dropdown-menu dropdown-menu-bykevin_dropup">
+					<li>
+						<a class="waves-attach waves-effect" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+					</li>
+					<li>
+						<a class="waves-attach waves-effect" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+					</li>
+					<li>
+						<a class="waves-attach waves-effect" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a class="waves-attach waves-effect"><span class="icon margin-right-sm">loop</span>&nbsp;xxxxx</a>
+			</li>
+		</ul>
+	</nav>
+	
+	
 	<header class="header header-transparent header-waterfall">
 		<ul class="nav nav-list pull-left">
 			<li>
@@ -57,123 +82,21 @@
 			<li>
 				<a data-toggle="menu" href="#profile">
 					<span class="access-hide">John Smith</span>
-					<span class="avatar"><img alt="alt text for John Smith avatar" src="../images/users/avatar-001.jpg"></span>
+					<span class="avatar"><img alt="alt text for John Smith avatar" src="{{ static_url("images/users/avatar-001.jpg") }}"></span>
 				</a>
 			</li>
 		</ul>
 	</header>
-	<nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-content">
-				<a class="menu-logo" href="index.html">Material</a>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="ui-card.html">Cards</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-collapse.html">Collapsible Regions</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-dropdown.html">Dropdowns</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-modal.html">Modals &amp; Toasts</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-nav.html">Navs</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-progress.html">Progress Bars</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-tab.html">Tabs</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-tile.html">Tiles</a>
-					</li>
-				</ul>
-				<hr>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="ui-button.html">Buttons</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-form.html">Form Elements</a>
-						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#form-elements" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="form-elements">
-							<li>
-								<a class="waves-attach" href="ui-form-adv.html">Form Elements <small>(materialised)</small></a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-icon.html">Icons</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="ui-table.html">Tables</a>
-					</li>
-				</ul>
-				<hr>
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="page-palette.html">Page Palettes</a>
-						<span class="menu-collapse-toggle collapsed waves-attach" data-target="#page-palettes" data-toggle="collapse"><i class="icon menu-collapse-toggle-close">close</i><i class="icon menu-collapse-toggle-default">add</i></span>
-						<ul class="menu-collapse collapse" id="page-palettes">
-							<li>
-								<a class="waves-attach" href="page-palette-brand.html">Brand Palette</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="page-palette-brand-accent.html">Accent Palette</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="page-palette-amber.html">Amber Palette</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="page-palette-green.html">Green Palette</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="page-palette-red.html">Red Palette</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<nav aria-hidden="true" class="menu menu-right" id="profile" tabindex="-1">
-		<div class="menu-scroll">
-			<div class="menu-top">
-				<div class="menu-top-img">
-					<img alt="John Smith" src="../images/samples/landscape.jpg">
-				</div>
-				<div class="menu-top-info">
-					<a class="menu-top-user" href="javascript:void(0)"><span class="avatar pull-left"><img alt="alt text for John Smith avatar" src="../images/users/avatar-001.jpg"></span>John Smith</a>
-				</div>
-				<div class="menu-top-info-sub">
-					<small>Some additional information about John Smith</small>
-				</div>
-			</div>
-			<div class="menu-content">
-				<ul class="nav">
-					<li>
-						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">account_box</span>Profile Settings</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="javascript:void(0)"><span class="icon icon-lg">add_to_photos</span>Upload Photo</a>
-					</li>
-					<li>
-						<a class="waves-attach" href="page-login.html"><span class="icon icon-lg">exit_to_app</span>Logout</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	
+	
+	
 	<div class="content" id="art_body">
 		<div class="content-heading">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-						<h1 class="heading">Material</h1>
+						<h1 class="heading operator_element" id="art_title">Material</h1>
+						<a class="fbtn operator_fbtn" id="art_title_e"><span class="fbtn-text">edit</span><span class="icon">border_color</span></a>
 					</div>
 				</div>
 			</div>
@@ -279,6 +202,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 	<footer class="footer">
 		<div class="container">
 			<p>Material</p>
@@ -299,22 +224,12 @@
 	<script src="{{ static_url("create_article.js") }}"></script>
 	
 	<script type="text/javascript">
-	var jcontent = "this is test string";
-	function getCookie(name) {
-	    var c = document.cookie.match("\\b" + name + "=([^;]*)\\b");
-	    return c ? c[1] : undefined;
-	}
+		var jcontent = "this is test string";
+		function getCookie(name) {
+		    var c = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+		    return c ? c[1] : undefined;
+		}
 
-	// jQuery.postJSON = function(url, data, callback) {
-// 	    data._xsrf = getCookie("_xsrf");
-// 	    jQuery.ajax({
-// 	        url: url,
-// 	        data: jQuery.param(data),
-// 	        dataType: "json",
-// 	        type: "POST",
-// 	        success: callback
-// 	    });
-// 	}
 		$('#btn_save').on('click', function () {
 			var _xsrf = getCookie("_xsrf");
 			
@@ -351,7 +266,7 @@
 				dataType: "json",
 				data: {},
 				success: function(data){
-					$("#art_body").text(data.msg);
+					// $("#art_body").text(data.msg);
 					// $("#dict_words").html("");
 // 					// alert(data.length);//输出root的子对象数量
 // 					$.each(data,function(idx,item){
@@ -368,6 +283,27 @@
 // 						$("#dict_words").append(c);
 					// }); 
 				}
+			});
+			
+		//set operator_fbtn hover method
+			$(".operator_element").each(function(n,obj) { 
+				var obj_id = $(obj).attr("id");
+				var edt_btn = $("#"+obj_id+"_e");
+				// $(obj).addClass("art-sentence-flat");
+// 				$(obj).addClass("art-sentence-noshadow");
+// 				$(obj).attr("id", "art-sentence-"+n);
+				edt_btn.hover(
+					function(){
+						//当鼠标放上去的时候,程序处理
+						$("#"+obj_id).addClass("operator_highlight");
+					},
+					function(){
+						//当鼠标离开的时候,程序处理
+						$("#"+obj_id).removeClass("operator_highlight");
+				});
+				
+				
+				
 			});
 		
 	</script>
